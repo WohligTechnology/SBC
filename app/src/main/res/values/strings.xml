@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Stake - BetCalculator</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_new_book">NewBook</string>
+    <string name="title_activity_open_book">OpenBook</string>
+    <string name="title_activity_new_bet">newBet</string>
+</resources>

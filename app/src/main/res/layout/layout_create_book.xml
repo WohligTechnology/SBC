@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.rey.material.widget.EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etBookName"
+        android:hint="Book Name"
+        android:textColor="@color/etTextColor"
+        app:et_labelTextColor="@color/etLabelTextColor"
+        app:et_labelPadding="@dimen/etLabelPadding"
+        app:et_labelEnable="true"
+        app:et_dividerColor="@color/etDividerColor"
+        app:et_dividerHeight="@dimen/etDividerHeight"
+        app:et_dividerPadding="@dimen/etDividerPadding"/>
+
+    <com.rey.material.widget.EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etHorse1"
+        android:hint="Horse 1"
+        android:textColor="@color/etTextColor"
+        app:et_labelTextColor="@color/etLabelTextColor"
+        app:et_labelPadding="@dimen/etLabelPadding"
+        app:et_labelEnable="true"
+        app:et_dividerColor="@color/etDividerColor"
+        app:et_dividerHeight="@dimen/etDividerHeight"
+        app:et_dividerPadding="@dimen/etDividerPadding" />
+
+    <com.rey.material.widget.EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etHorse2"
+        android:hint="Horse 2"
+        android:textColor="@color/etTextColor"
+        app:et_labelTextColor="@color/etLabelTextColor"
+        app:et_labelPadding="@dimen/etLabelPadding"
+        app:et_labelEnable="true"
+        app:et_dividerColor="@color/etDividerColor"
+        app:et_dividerHeight="@dimen/etDividerHeight"
+        app:et_dividerPadding="@dimen/etDividerPadding" />
+
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.wohlig.jay.stake_betcalculator"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.1'
+
+    compile 'com.github.rey5137:material:1.2.1' //material design rey
+    //compile 'com.android.support:appcompat-v7:22.2.1' //required for above material library
+    compile 'com.android.support:cardview-v7:22.2.1' //required for above material library
+
+    compile 'com.github.satyan:sugar:1.3' //sugar orm database
+
+    compile 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3' //success button
+
+}

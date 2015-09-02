@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="title_home_color">#fff</color>
+    <color name="etLabelTextColor">#a8a8aa</color>
+    <color name="etTextColor">#000</color>
+    <color name="etDividerColor">#ddd</color>
+    <color name="btFloatingColor">#2196F3</color>
+    <color name="titleBar">#2196F3</color>
+</resources>

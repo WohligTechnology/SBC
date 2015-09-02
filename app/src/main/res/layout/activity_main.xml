@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lvBook"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:choiceMode="none"/>
+
+            <com.rey.material.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:rd_enable="true"
+                app:fab_backgroundColor="@color/btFloatingColor"
+                app:fab_radius="25dp"
+                app:fab_iconSrc="@drawable/ic_action_add"
+                app:fab_iconSize="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/view"
+                android:onClick="newBook"
+                android:layout_margin="5dp" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
