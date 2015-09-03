@@ -10,6 +10,9 @@
     tools:context="com.wohlig.jay.stake_betcalculator.NewBook"
     android:background="#fff">
 
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -54,6 +57,24 @@
             app:et_dividerHeight="@dimen/etDividerHeight"
             app:et_dividerPadding="@dimen/etDividerPadding" />
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/moreHorses">
+
+        </LinearLayout>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add horse"
+            android:id="@+id/more"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:onClick="addHorse"/>
+
         <DatePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,5 +104,5 @@
             android:layout_gravity="center_horizontal"
             android:onClick="createBook"/>
     </LinearLayout>
-
+    </ScrollView>
 </RelativeLayout>

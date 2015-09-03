@@ -1,5 +1,6 @@
 package com.wohlig.jay.stake_betcalculator;
 
+import android.app.ActionBar;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -7,15 +8,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
 
 import com.dd.CircularProgressButton;
 import com.rey.material.widget.EditText;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class NewBook extends AppCompatActivity {
 
     CircularProgressButton btCreate;
     EditText h1, h2, bn;
     DatePicker dpd;
+    LinearLayout moreHorses;
+    int horseNum=2;
+    List<EditText> allEt = new ArrayList<EditText>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +38,16 @@ public class NewBook extends AppCompatActivity {
         bn = (EditText) findViewById(R.id.etBookName);
         dpd = (DatePicker) findViewById(R.id.dpDate);
         btCreate = (CircularProgressButton) findViewById(R.id.btNewBook);
+        moreHorses = (LinearLayout) findViewById(R.id.moreHorses);
+
+        allEt.add(h1);
+        allEt.add(h2);
     }
 
     public void createBook(View v) {
 
         //fetch all the values
         String name = bn.getText().toString();
-        String horse1 = h1.getText().toString();
-        String horse2 = h2.getText().toString();
         int day = dpd.getDayOfMonth();
         int month = dpd.getMonth() + 1;
         int year = dpd.getYear();
@@ -49,25 +59,36 @@ public class NewBook extends AppCompatActivity {
         Long bookid = book.getId();
         Log.d("BookId new", Long.toString(bookid));
 
+        String h=null;
         //save horses with bookid in horse table
-        for(int i=1;i<=2;i++) {
+        for(int i=0;i<horseNum;i++) {
             String horseName=null;
-
-            if(i==1)
-                horseName=horse1;
-            else
-                horseName=horse2;
+            h=h+i;
+            horseName=allEt.get(i).getText().toString();
+            Log.d("a",allEt.get(i).getText().toString());
+            if(horseName.isEmpty())
+                continue;
 
             Double total=0.0; // initially total for each horse would be 0.0 (it is double so decimal required)
             Horse horse = new Horse((int)(float)bookid,horseName, total); //bookid,horsename,total
             horse.save();
-
-            /*
-                need to make it dynamic for multiple horses
-            */
         }
+        allEt.clear();
         //success button
         btCreate.setIndeterminateProgressMode(true);
         btCreate.setProgress(100);
+    }
+
+    public void addHorse(View v){
+
+        horseNum++;
+        horseNum=horseNum;
+        Log.d("After horse",Integer.toString(horseNum));
+        EditText myEditText = new EditText(this); // Pass it an Activity or Context
+        //myEditText.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+        moreHorses.addView(myEditText);
+        allEt.add(myEditText);
+
+
     }
 }

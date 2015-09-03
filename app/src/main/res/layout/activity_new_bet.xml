@@ -11,7 +11,6 @@
     tools:context="com.wohlig.jay.stake_betcalculator.newBet">
 
     <!--<com.rey.material.widget.Spinner-->
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -93,13 +92,13 @@
             android:textColor="#fff"
             android:textSize="16sp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="10dp"
             app:cpb_textComplete="Successfully Bet created"
             app:cpb_textError="Error"
             app:cpb_textIdle="Create bet"
             android:layout_gravity="center_horizontal"
             android:onClick="createBet"/>
-    </LinearLayout>
 
+    </LinearLayout>
 
 </RelativeLayout>
