@@ -1,11 +1,11 @@
 package com.wohlig.jay.stake_betcalculator;
 
-import android.app.ActionBar;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
@@ -83,12 +83,14 @@ public class NewBook extends AppCompatActivity {
 
         horseNum++;
         horseNum=horseNum;
-        Log.d("After horse",Integer.toString(horseNum));
-        EditText myEditText = new EditText(this); // Pass it an Activity or Context
-        //myEditText.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)); // Pass two args; must be LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, or an integer pixel value.
+        Log.d("After horse", Integer.toString(horseNum));
+
+        LayoutInflater Li = LayoutInflater.from(getApplicationContext());
+        View view = Li.inflate(R.layout.et_layout,null);
+        EditText myEditText = (EditText) view.findViewById(R.id.et);
+        myEditText.setHint("Horse " + horseNum);
         moreHorses.addView(myEditText);
         allEt.add(myEditText);
-
 
     }
 }
