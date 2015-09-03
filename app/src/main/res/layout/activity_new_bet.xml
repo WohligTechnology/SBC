@@ -56,49 +56,35 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <com.rey.material.widget.EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/etOdds"
+            android:hint="Odds"
+            app:et_labelTextColor="@color/etLabelTextColor"
+            app:et_labelPadding="@dimen/etLabelPadding"
+            app:et_labelEnable="true"
+            app:et_dividerColor="@color/etDividerColor"
+            app:et_dividerHeight="@dimen/etDividerHeight"
+            app:et_dividerPadding="@dimen/etDividerPadding"
+            android:layout_margin="2dp" />
 
-            <com.rey.material.widget.EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:ems="10"
-                android:id="@+id/etOdds"
-                android:hint="Odds"
-                app:et_labelTextColor="@color/etLabelTextColor"
-                app:et_labelPadding="@dimen/etLabelPadding"
-                app:et_labelEnable="true"
-                app:et_dividerColor="@color/etDividerColor"
-                app:et_dividerHeight="@dimen/etDividerHeight"
-                app:et_dividerPadding="@dimen/etDividerPadding"
-                android:layout_weight="1"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="2dp" />
-
-            <com.rey.material.widget.EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:ems="10"
-                android:id="@+id/etStake"
-                android:hint="Stake"
-                app:et_labelTextColor="@color/etLabelTextColor"
-                app:et_labelPadding="@dimen/etLabelPadding"
-                app:et_labelEnable="true"
-                app:et_dividerColor="@color/etDividerColor"
-                app:et_dividerHeight="@dimen/etDividerHeight"
-                app:et_dividerPadding="@dimen/etDividerPadding"
-                android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginBottom="2dp" />
-        </LinearLayout>
+        <com.rey.material.widget.EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/etStake"
+            android:hint="Stake"
+            app:et_labelTextColor="@color/etLabelTextColor"
+            app:et_labelPadding="@dimen/etLabelPadding"
+            app:et_labelEnable="true"
+            app:et_dividerColor="@color/etDividerColor"
+            app:et_dividerHeight="@dimen/etDividerHeight"
+            app:et_dividerPadding="@dimen/etDividerPadding"
+            android:layout_margin="2dp" />
 
         <com.dd.CircularProgressButton
             android:id="@+id/btCreateBet"

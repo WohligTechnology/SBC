@@ -68,18 +68,18 @@ public class HorseListViewAdapter extends BaseAdapter {
         }
 
         HashMap<String,String> map =list.get(position);
-        Log.d("HorseName",map.get("tvHorseName"));
-        Log.d("HorseTotal", map.get("tvHorseTotal"));
+        //Log.d("HorseName",map.get("tvHorseName"));
+        //Log.d("HorseTotal", map.get("tvHorseTotal"));
         if(Float.parseFloat(map.get("tvHorseTotal"))>0.0){
-            Log.d("greater",map.get("tvHorseTotal"));
+            //Log.d("greater",map.get("tvHorseTotal"));
             holder.txtHorseTotal.setBackgroundColor(Color.parseColor("#4CAF50"));
         }
         else if(Float.parseFloat(map.get("tvHorseTotal"))==0.0) {
-            Log.d("equal",map.get("tvHorseTotal"));
+            //Log.d("equal",map.get("tvHorseTotal"));
             holder.txtHorseTotal.setBackgroundColor(Color.parseColor("#0D71FF"));
         }
         else{
-            Log.d("smaller",map.get("tvHorseTotal"));
+            //Log.d("smaller",map.get("tvHorseTotal"));
             holder.txtHorseTotal.setBackgroundColor(Color.parseColor("#FF5252"));
         }
         holder.txtHorseName.setText(map.get("tvHorseName")); //set the hash maps

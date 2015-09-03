@@ -88,13 +88,6 @@ public class newBet extends AppCompatActivity {
         int typeId = spinBetType.getSelectedItemPosition();
         int horsePosition = spinHorse.getSelectedItemPosition();
 
-        /*Log.d("odds",Double.toString(oddsValue));
-        Log.d("stake",Double.toString(stakeValue));
-        Log.d("team",teamValue);
-        Log.d("selecteditemPosi", Integer.toString(typeId));
-        Log.d("horsePosition",Integer.toString(horsePosition));
-        */
-
         Double result = 0.0;
 
         Log.d("Result",Double.toString(result));
@@ -103,9 +96,6 @@ public class newBet extends AppCompatActivity {
 
         int i = 0;
         for (Horse h : horseList){
-
-            //Log.d("i",Integer.toString(i));
-            //Log.d("HorsePosition",Integer.toString(horsePosition));
 
             //check for selected horse
             if(i==horsePosition){
@@ -169,26 +159,14 @@ public class newBet extends AppCompatActivity {
 
         btCreate.setIndeterminateProgressMode(true);
         btCreate.setProgress(100);
-    }
 
-    public void deleteBets(View v){
+        try
+        {
+            finish();
+        }
+        catch(Exception e)
+        {
 
-        List<Bet> bets = Bet.listAll(Bet.class);
-        Bet.deleteAll(Bet.class);
-
-        Horse horse = Horse.findById(Horse.class, (long) (id));
-        horse.total = 0.0 ;
-        horse.save();
-
-        Horse horse1 = Horse.findById(Horse.class, (long) (2));
-        horse1.total = 0.0 ;
-        horse1.save();
-
-        List<Horse> horses = Horse.listAll(Horse.class);
-        for(Horse h:horses){
-            String log = null;
-            log = h.getHorseName()+ "\t "+h.getBookId()+"\t "+h.getTotal();
-            Log.d("",log);
         }
     }
 }

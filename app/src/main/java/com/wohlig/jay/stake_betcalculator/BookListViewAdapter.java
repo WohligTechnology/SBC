@@ -71,7 +71,6 @@ public class BookListViewAdapter extends BaseAdapter {
         holder.txtFirst.setText(map.get("tvBookName")); //set the hash maps
         holder.txtIdHidden.setText(map.get("tvIdHidden"));
         holder.button.setId(Integer.parseInt(map.get("tvIdHidden")));
-        //holder.button.setText(map.get("btDeleteButton"));
         return convertView;
     }
 }

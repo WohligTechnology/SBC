@@ -44,6 +44,10 @@
             android:name=".newBet"
             android:label="@string/title_activity_new_bet" >
         </activity>
+        <activity
+            android:name=".ViewBets"
+            android:label="@string/title_activity_view_bets" >
+        </activity>
     </application>
 
 </manifest>
