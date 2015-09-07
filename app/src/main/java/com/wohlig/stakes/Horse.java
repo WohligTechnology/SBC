@@ -1,4 +1,4 @@
-package com.wohlig.jay.stake_betcalculator;
+package com.wohlig.stakes;
 
 import com.orm.SugarRecord;
 

@@ -1,10 +1,9 @@
-package com.wohlig.jay.stake_betcalculator;
+package com.wohlig.stakes;
 
 import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.wohlig.jay.stake_betcalculator;
+package com.wohlig.stakes;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Bookname", bookname);
 
                 try {
+                    System.out.println("Bookname: "+bookname);
                     Intent bookIntent = new Intent(MainActivity.this, OpenBook.class);
                     bookIntent.putExtra("BookName", bookname);
                     bookIntent.putExtra("BookId", bid);

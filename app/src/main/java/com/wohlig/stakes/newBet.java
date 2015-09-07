@@ -1,4 +1,4 @@
-package com.wohlig.jay.stake_betcalculator;
+package com.wohlig.stakes;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -90,7 +90,7 @@ public class newBet extends AppCompatActivity {
 
         Double result = 0.0;
 
-        Log.d("Result",Double.toString(result));
+        Log.d("Result", Double.toString(result));
 
         List<Horse> horseList = Horse.findWithQuery(Horse.class, "Select * from Horse where BOOK_ID = ?", Integer.toString(id));
 

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    tools:context="com.wohlig.jay.stake_betcalculator.ViewBets">
+    tools:context="com.wohlig.stakes.ViewBets">
 
 
     <ListView

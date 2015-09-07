@@ -5,7 +5,7 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "com.wohlig.jay.stake_betcalculator"
+        applicationId "com.wohlig.stakes"
         minSdkVersion 14
         targetSdkVersion 22
         versionCode 1

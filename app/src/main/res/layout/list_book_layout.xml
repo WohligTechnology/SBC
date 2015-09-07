@@ -3,7 +3,7 @@
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:descendantFocusability="blocksDescendants">
 
-    //android:descendantFocusability="blocksDescendants" is important or else listview wont be clickable
+    //android:descendantFocusability="blocksDescendants" is important or else listview wont be clickable//
 
     <LinearLayout
         android:orientation="horizontal"
