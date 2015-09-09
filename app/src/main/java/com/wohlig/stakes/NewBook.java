@@ -77,6 +77,9 @@ public class NewBook extends AppCompatActivity {
         //success button
         btCreate.setIndeterminateProgressMode(true);
         btCreate.setProgress(100);
+
+        finish();
+
     }
 
     public void addHorse(View v){
@@ -91,6 +94,5 @@ public class NewBook extends AppCompatActivity {
         myEditText.setHint("Horse " + horseNum);
         moreHorses.addView(myEditText);
         allEt.add(myEditText);
-
     }
 }
