@@ -65,44 +65,32 @@
 
         </LinearLayout>
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+        <com.dd.CircularProgressButton
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add horse"
+            app:cpb_textIdle="Add Horse"
+            app:cpb_cornerRadius="3dp"
+            android:layout_gravity="center_horizontal"
             android:id="@+id/more"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:onClick="addHorse"/>
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:onClick="addHorse" />
 
-        <DatePicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/dpDate"
-            android:layout_gravity="center_horizontal"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner"
-            android:layout_margin="10dp"/>
-
-        <!--<Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/btNewBook"
-            android:layout_gravity="center_horizontal"
-            android:onClick="createBook"/>-->
 
         <com.dd.CircularProgressButton
             android:id="@+id/btNewBook"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#fff"
             android:textSize="16sp"
+            app:cpb_cornerRadius="3dp"
             app:cpb_textComplete="Successfully Book created"
             app:cpb_textError="Error"
             app:cpb_textIdle="Create book"
             android:layout_gravity="center_horizontal"
-            android:onClick="createBook"/>
+            android:onClick="createBook"
+            android:layout_marginTop="10dp" />
     </LinearLayout>
     </ScrollView>
 </RelativeLayout>

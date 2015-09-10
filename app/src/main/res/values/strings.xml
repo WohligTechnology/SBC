@@ -7,4 +7,6 @@
     <string name="title_activity_open_book">OpenBook</string>
     <string name="title_activity_new_bet">newBet</string>
     <string name="title_activity_view_bets">ViewBets</string>
+    <string name="noBetsMessage">You have made no bets yet.</string>
+    <string name="noBooksMessage">Click the Add button below to add new Book.</string>
 </resources>

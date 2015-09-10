@@ -87,10 +87,11 @@
 
         <com.dd.CircularProgressButton
             android:id="@+id/btCreateBet"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#fff"
             android:textSize="16sp"
+            app:cpb_cornerRadius="3dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             app:cpb_textComplete="Successfully Bet created"

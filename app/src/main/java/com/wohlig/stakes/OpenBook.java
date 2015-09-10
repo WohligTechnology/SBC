@@ -22,6 +22,8 @@ public class OpenBook extends AppCompatActivity {
     private String bookName;
     private ListView lvHorse;
     private ArrayList<HashMap<String,String>> list;
+    private int firstPositionId;
+    String[] horse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,7 @@ public class OpenBook extends AppCompatActivity {
 
         List<Horse> horseList = Horse.findWithQuery(Horse.class, "Select * from Horse where BOOK_ID = ?", Integer.toString(bookId));
 
-        final String[] horse = new String[horseList.size()];
+        horse = new String[horseList.size()];
         int i = 0;
         for (Horse h : horseList){
             horse[i]= h.getHorseName();
@@ -131,5 +133,14 @@ public class OpenBook extends AppCompatActivity {
         startActivity(viewBets);
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void newBet(View v){
+        Intent makeBet = new Intent(OpenBook.this, newBet.class);
+        makeBet.putExtra("horse",horse);
+        makeBet.putExtra("bookName",bookName);
+        makeBet.putExtra("bookId",bookId);
+        makeBet.putExtra("position",0);
+        startActivity(makeBet);
     }
 }

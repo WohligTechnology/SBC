@@ -13,14 +13,16 @@ import android.widget.LinearLayout;
 import com.dd.CircularProgressButton;
 import com.rey.material.widget.EditText;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class NewBook extends AppCompatActivity {
 
-    CircularProgressButton btCreate;
+    CircularProgressButton btCreate ;
     EditText h1, h2, bn;
-    DatePicker dpd;
+    //DatePicker dpd;
     LinearLayout moreHorses;
     int horseNum=2;
     List<EditText> allEt = new ArrayList<EditText>();
@@ -36,7 +38,7 @@ public class NewBook extends AppCompatActivity {
         h1 = (EditText) findViewById(R.id.etHorse1);
         h2 = (EditText) findViewById(R.id.etHorse2);
         bn = (EditText) findViewById(R.id.etBookName);
-        dpd = (DatePicker) findViewById(R.id.dpDate);
+        //dpd = (DatePicker) findViewById(R.id.dpDate);
         btCreate = (CircularProgressButton) findViewById(R.id.btNewBook);
         moreHorses = (LinearLayout) findViewById(R.id.moreHorses);
 
@@ -48,10 +50,13 @@ public class NewBook extends AppCompatActivity {
 
         //fetch all the values
         String name = bn.getText().toString();
-        int day = dpd.getDayOfMonth();
-        int month = dpd.getMonth() + 1;
-        int year = dpd.getYear();
-        String date = day + "/" + month + "/" + year;
+        //int day = dpd.getDayOfMonth();
+        //int month = dpd.getMonth() + 1;
+        //int year = dpd.getYear();
+        Date dateToday = new Date();
+        String date= new SimpleDateFormat("dd/MM/yyyy").format(dateToday);
+        System.out.println("todays date"+date);
+        //String date = day + "/" + month + "/" + year;
 
         //save the new book
         Book book = new Book(name,date);

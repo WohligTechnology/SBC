@@ -19,7 +19,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tvBookId;
+    private TextView tvBookId,tvNoBooks;
 
     private ArrayList<HashMap<String,String>> list;
 
@@ -30,8 +30,16 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.lvBook);
         populateList();
-        BookListViewAdapter adapter = new BookListViewAdapter(this,list);
-        listView.setAdapter(adapter);
+
+        tvNoBooks = (TextView) findViewById(R.id.tvNoBooks);
+        if(list.size()>0) {
+            tvNoBooks.setVisibility(View.GONE);
+            BookListViewAdapter adapter = new BookListViewAdapter(this, list);
+            listView.setAdapter(adapter);
+        }
+        else{
+            listView.setEmptyView(tvNoBooks);
+        }
 
 
         //dont show the app title
@@ -58,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Bookname", bookname);
 
                 try {
-                    System.out.println("Bookname: "+bookname);
                     Intent bookIntent = new Intent(MainActivity.this, OpenBook.class);
                     bookIntent.putExtra("BookName", bookname);
                     bookIntent.putExtra("BookId", bid);
@@ -76,8 +83,17 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.lvBook);
         populateList();
-        BookListViewAdapter adapter = new BookListViewAdapter(this,list);
-        listView.setAdapter(adapter);
+
+        if(list.size()>0) {
+            tvNoBooks.setVisibility(View.GONE);
+            BookListViewAdapter adapter = new BookListViewAdapter(this, list);
+            listView.setAdapter(adapter);
+        }
+        else{
+            BookListViewAdapter adapter = new BookListViewAdapter(this, list);
+            listView.setAdapter(adapter);
+            listView.setEmptyView(tvNoBooks);
+        }
 
     }
 
@@ -90,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
     private void populateList(){
 
         list=new ArrayList<HashMap<String, String>>();
-        List<Book> bookList = Book.listAll(Book.class);
+        List<Book> bookList = Book.findWithQuery(Book.class, "Select * from Book ORDER BY ID DESC");
+
         for(Book b : bookList)
         {
             HashMap<String,String> map = new HashMap<String,String>();

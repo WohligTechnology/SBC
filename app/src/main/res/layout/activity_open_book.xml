@@ -1,15 +1,32 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.wohlig.stakes.OpenBook"
     android:background="#fff">
 
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/lvHorse"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <com.rey.material.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:rd_enable="true"
+        app:fab_backgroundColor="@color/btFloatingColor"
+        app:fab_radius="25dp"
+        app:fab_iconSrc="@drawable/ic_action_add"
+        app:fab_iconSize="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btNewBet"
+        android:onClick="newBet"
+        android:layout_margin="5dp" />
 
 </RelativeLayout>
 

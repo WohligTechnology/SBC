@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ListView;
 import android.view.View;
+import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -39,14 +40,43 @@ public class ViewBets extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.lvBet);
         populateList();
-        BetListViewAdapter adapter = new BetListViewAdapter(this,list);
-        listView.setAdapter(adapter);
+        TextView tvNoBets = (TextView) findViewById(R.id.tvNoBets);
+        System.out.println("List size: " + list.size());
+        if(list.size()>0) {
+            tvNoBets.setVisibility(View.GONE);
+            BetListViewAdapter adapter = new BetListViewAdapter(this, list);
+            listView.setAdapter(adapter);
+        }
+        else{
+            listView.setEmptyView(tvNoBets);
+        }
+
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        ListView listView = (ListView) findViewById(R.id.lvBet);
+        populateList();
+        TextView tvNoBets = (TextView) findViewById(R.id.tvNoBets);
+        System.out.println("List size: " + list.size());
+        if(list.size()>0) {
+            tvNoBets.setVisibility(View.GONE);
+            BetListViewAdapter adapter = new BetListViewAdapter(this, list);
+            listView.setAdapter(adapter);
+        }
+        else{
+            listView.setEmptyView(tvNoBets);
+        }
+
     }
 
     private void populateList(){
 
         list=new ArrayList<HashMap<String, String>>();
-        List<Bet> betList = Bet.findWithQuery(Bet.class, "Select * from Bet where BOOK_ID = ?", Integer.toString(bookId));
+        List<Bet> betList = Bet.findWithQuery(Bet.class, "Select * from Bet where BOOK_ID = ? ORDER BY ID DESC", Integer.toString(bookId));
         for(Bet b : betList)
         {
             String backLay=null;

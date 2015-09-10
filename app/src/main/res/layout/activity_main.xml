@@ -17,11 +17,11 @@
 
             <ListView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/lvBook"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:choiceMode="none"/>
+                android:choiceMode="none" />
 
             <com.rey.material.widget.FloatingActionButton
                 android:layout_width="wrap_content"
@@ -37,6 +37,16 @@
                 android:id="@+id/view"
                 android:onClick="newBook"
                 android:layout_margin="5dp" />
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="@string/noBooksMessage"
+                android:id="@+id/tvNoBooks"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="16sp"
+                android:gravity="center_horizontal" />
 
         </RelativeLayout>
 
